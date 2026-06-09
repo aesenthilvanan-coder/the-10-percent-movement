@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   title: "The 10% Movement — Because 90% Isn't Enough",
   description:
     "A research-driven initiative dedicated to the patients, populations, and biological outliers often overlooked by majority-focused science.",
+  icons: {
+    icon: "/images/logo.jpg",
+    apple: "/images/logo.jpg",
+  },
   openGraph: {
     title: "The 10% Movement",
     description: "Because 90% isn't enough.",
