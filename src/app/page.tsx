@@ -24,6 +24,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── MARQUEE TICKER ──────────────────────────────────────── */}
+      <div className="overflow-hidden border-y border-[#1e1e1e] py-4 bg-[#0d0d0d]">
+        <div className="marquee-track">
+          {[
+            "CYP2C19 poor metabolizers · 14% in Chinese populations",
+            "East Asian intermediate metabolizers · 45%+",
+            "EGFR non-responders · ~10% of NSCLC patients",
+            "300 million rare disease patients globally",
+            "Clinical trials underrepresent minority populations",
+            "Clopidogrel efficacy varies dramatically by genotype",
+            "The 10% Movement · opening June 11, 2026",
+            "Pharmacogenomics is not a niche — it's a gap in standard care",
+            "CYP2C19 poor metabolizers · 14% in Chinese populations",
+            "East Asian intermediate metabolizers · 45%+",
+            "EGFR non-responders · ~10% of NSCLC patients",
+            "300 million rare disease patients globally",
+            "Clinical trials underrepresent minority populations",
+            "Clopidogrel efficacy varies dramatically by genotype",
+            "The 10% Movement · opening June 11, 2026",
+            "Pharmacogenomics is not a niche — it's a gap in standard care",
+          ].map((fact, i) => (
+            <span key={i} className="flex-shrink-0 text-xs text-[#444] uppercase tracking-[0.18em] font-medium px-10 select-none">
+              {fact}
+              <span className="text-[#2a2a2a] ml-10">◆</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
       {/* ── MISSION PILLARS: Staggered slide from right ─────────── */}
       <section className="py-24 px-6 border-b border-[#1e1e1e]">
         <div className="max-w-6xl mx-auto">
@@ -295,23 +324,29 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#1e1e1e]">
             {[
-              { name: "Aaryan Senthilvanan", role: "Co-Founder", affiliations: "Founder @ SYALIS Labs · Intern @ Palisades Therapeutics · Stanford · Caltech", initials: "AS", img: "/images/aaryan.jpg" },
-              { name: "Chloe", role: "Co-Founder", affiliations: "Intern @ Stanford · Creator of Francesca", initials: "C", img: "/images/chloe.jpg" },
-              { name: "Buno", role: "Co-Founder", affiliations: "Intern @ MIT · Founder @ Synthica", initials: "B", img: "/images/buno.jpg" },
+              { name: "Aaryan Senthilvanan", role: "Co-Founder", affiliations: "Founder @ SYALIS Labs · Intern @ Palisades Therapeutics", initials: "AS", linkedin: "https://www.linkedin.com/in/aaryan-senthilvanan/" },
+              { name: "Chloe", role: "Co-Founder", affiliations: "Intern @ Stanford School of Medicine · Hillbrook School", initials: "C", linkedin: "https://www.linkedin.com/in/chloe-scott-161758290/" },
+              { name: "Buno", role: "Co-Founder", affiliations: "Intern @ MIT · Founder @ Synthica", initials: "B", linkedin: "https://www.linkedin.com/in/buiducquang/" },
             ].map((founder, i) => (
-              <AnimateIn key={founder.name} animation="slide-up" delay={i * 0.12} className="bg-[#0a0a0a] p-8">
-                <AnimateIn animation="iris-reveal" className="w-20 h-20 rounded-full overflow-hidden mb-5 bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center flex-shrink-0">
-                  <Image
-                    src={founder.img}
-                    alt={founder.name}
-                    width={80}
-                    height={80}
-                    className="object-cover w-full h-full"
-                  />
-                </AnimateIn>
-                <p className="text-base font-medium mb-0.5">{founder.name}</p>
-                <p className="text-xs text-[#555] uppercase tracking-widest font-medium mb-3">{founder.role}</p>
-                <p className="text-xs text-[#666] leading-relaxed">{founder.affiliations}</p>
+              <AnimateIn key={founder.name} animation="rotate-in" delay={i * 0.14} className="bg-[#0a0a0a] p-8">
+                <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" className="block group">
+                  {/* Rotating avatar */}
+                  <div className="relative w-20 h-20 mb-5">
+                    <div
+                      className="absolute inset-0 rounded-full spin-ring"
+                      style={{ background: "conic-gradient(from 0deg, transparent 0%, rgba(255,255,255,0.2) 28%, rgba(255,255,255,0.05) 48%, transparent 68%)" }}
+                    />
+                    <div className="absolute inset-[1.5px] rounded-full bg-[#0a0a0a] flex items-center justify-center">
+                      <span className="text-lg font-semibold text-white/35 italic" style={{ fontFamily: "var(--font-serif)" }}>
+                        {founder.initials}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-base font-medium mb-0.5 group-hover:text-white/80 transition-colors">{founder.name}</p>
+                  <p className="text-xs text-[#555] uppercase tracking-widest font-medium mb-3">{founder.role}</p>
+                  <p className="text-xs text-[#666] leading-relaxed mb-4">{founder.affiliations}</p>
+                  <p className="text-xs text-[#444] group-hover:text-white/50 transition-colors">LinkedIn ↗</p>
+                </a>
               </AnimateIn>
             ))}
           </div>

@@ -2,9 +2,9 @@
 import { useEffect, useRef, useState, CSSProperties } from "react";
 
 interface Props {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
-  animation?: "slide-up" | "slide-right" | "reveal-left" | "scale-reveal" | "iris-reveal";
+  animation?: "slide-up" | "slide-right" | "slide-left" | "reveal-left" | "scale-reveal" | "iris-reveal" | "blur-reveal" | "skew-up" | "flip-in" | "rotate-in" | "draw-line";
   delay?: number;
   threshold?: number;
   style?: CSSProperties;
