@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import HeroCounter from "@/components/HeroCounter";
 import AnimateIn from "@/components/AnimateIn";
@@ -219,19 +218,6 @@ export default function Home() {
                 </AnimateIn>
               ))}
 
-              <AnimateIn animation="scale-reveal" delay={0.45} className="bg-[#111] border border-[#1e1e1e] p-6">
-                <p className="text-xs text-[#555] uppercase tracking-widest font-medium mb-4">
-                  DNA Profiling &amp; Treatment Response
-                </p>
-                <div className="relative w-full aspect-square rounded-sm overflow-hidden bg-white">
-                  <Image
-                    src="/images/pharmacogenomics.jpg"
-                    alt="DNA profiling diagram showing patient stratification by treatment response"
-                    fill
-                    className="object-contain p-2"
-                  />
-                </div>
-              </AnimateIn>
             </div>
           </div>
         </div>
