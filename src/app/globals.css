@@ -16,20 +16,105 @@ body {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+.font-serif {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
 ::selection {
   background-color: #ffffff;
   color: #0a0a0a;
 }
 
-::-webkit-scrollbar {
-  width: 4px;
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+
+/* ─── KEYFRAMES ─────────────────────────────────────────────── */
+
+@keyframes stampIn {
+  0%   { transform: scale(1.2); opacity: 0; }
+  60%  { transform: scale(0.97); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
 }
 
-::-webkit-scrollbar-thumb {
-  background: #2a2a2a;
-  border-radius: 2px;
+@keyframes expandWidth {
+  from { transform: translateX(-50%) scaleX(0); }
+  to   { transform: translateX(-50%) scaleX(1); }
 }
+
+@keyframes slideInLeft {
+  from { transform: translateX(-48px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(48px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(32px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* ─── SCROLL-TRIGGERED CLASSES ──────────────────────────────── */
+
+.reveal-left {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.in-view {
+  clip-path: inset(0 0% 0 0);
+}
+
+.slide-up {
+  transform: translateY(32px);
+  opacity: 0;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.7s ease;
+}
+.slide-up.in-view {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-right {
+  transform: translateX(36px);
+  opacity: 0;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.6s ease;
+}
+.slide-right.in-view {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.scale-reveal {
+  transform: scale(0.88);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.34, 1.2, 0.64, 1),
+              opacity 0.6s ease;
+}
+.scale-reveal.in-view {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.iris-reveal {
+  clip-path: circle(0% at 50% 40%);
+  transition: clip-path 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.iris-reveal.in-view {
+  clip-path: circle(80% at 50% 40%);
+}
+
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
