@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
+import NetworkHero from "@/components/NetworkHero";
 
 export const metadata: Metadata = {
   title: "Research Cohort — The 10% Movement",
@@ -10,28 +11,7 @@ export const metadata: Metadata = {
 export default function Research() {
   return (
     <div>
-      {/* PAGE HEADER */}
-      <section className="py-20 px-6 border-b border-[#1e1e1e]">
-        <div className="max-w-6xl mx-auto">
-          <AnimateIn animation="reveal-left">
-            <p className="text-xs text-[#555] uppercase tracking-[0.2em] font-medium mb-4">Research Cohort</p>
-          </AnimateIn>
-          <AnimateIn animation="skew-up" delay={0.1}>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl leading-tight mb-6">
-              A community of researchers who believe the outlier{" "}
-              <span className="text-[#555]">deserves the same rigor as the majority.</span>
-            </h1>
-          </AnimateIn>
-          <AnimateIn animation="slide-up" delay={0.25}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 border border-[#2a2a2a] rounded-full bg-[#111] text-xs text-[#888]">
-              <span className="w-1.5 h-1.5 rounded-full bg-white opacity-80 animate-pulse" />
-              Applications open June 11, 2026
-            </div>
-          </AnimateIn>
-          {/* draw-line */}
-          <AnimateIn animation="draw-line" delay={0.4} className="mt-10 h-px bg-[#2a2a2a]" />
-        </div>
-      </section>
+      <NetworkHero />
 
       {/* WHAT IT IS */}
       <section className="py-20 px-6 border-b border-[#1e1e1e]">

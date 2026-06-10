@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AnimateIn from "@/components/AnimateIn";
 import Link from "next/link";
+import HelixHero from "@/components/HelixHero";
 
 export const metadata: Metadata = {
   title: "The Movement — The 10% Movement",
@@ -25,23 +26,7 @@ export default function About() {
 
   return (
     <div>
-      {/* PAGE HEADER */}
-      <section className="py-20 px-6 border-b border-[#1e1e1e]">
-        <div className="max-w-6xl mx-auto">
-          <AnimateIn animation="reveal-left">
-            <p className="text-xs text-[#555] uppercase tracking-[0.2em] font-medium mb-4">The Movement</p>
-          </AnimateIn>
-          <AnimateIn animation="skew-up" delay={0.1}>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl leading-tight">
-              Science is built on averages.{" "}
-              <span className="text-[#555]">Millions of patients fall outside them.</span>
-            </h1>
-          </AnimateIn>
-
-          {/* draw-line divider */}
-          <AnimateIn animation="draw-line" delay={0.35} className="mt-10 h-px bg-[#2a2a2a]" />
-        </div>
-      </section>
+      <HelixHero />
 
       {/* VISION */}
       <section className="py-20 px-6 border-b border-[#1e1e1e]">

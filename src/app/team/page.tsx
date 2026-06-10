@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AnimateIn from "@/components/AnimateIn";
 import Link from "next/link";
+import TriOrbitHero from "@/components/TriOrbitHero";
 
 export const metadata: Metadata = {
   title: "Team — The 10% Movement",
@@ -49,23 +50,7 @@ const founders = [
 export default function Team() {
   return (
     <div>
-      {/* PAGE HEADER */}
-      <section className="py-20 px-6 border-b border-[#1e1e1e] bg-[#0d0d0d]">
-        <div className="max-w-6xl mx-auto">
-          <AnimateIn animation="reveal-left">
-            <p className="text-xs text-[#555] uppercase tracking-[0.2em] font-medium mb-4">Team</p>
-          </AnimateIn>
-          <AnimateIn animation="skew-up" delay={0.1}>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight max-w-3xl leading-tight">
-              Three founders.{" "}
-              <span className="text-[#555]">One conviction.</span>
-            </h1>
-          </AnimateIn>
-
-          {/* Draw-line divider */}
-          <AnimateIn animation="draw-line" delay={0.3} className="mt-10 h-px bg-[#2a2a2a]" />
-        </div>
-      </section>
+      <TriOrbitHero />
 
       {/* FOUNDERS */}
       <section className="py-20 px-6 border-b border-[#1e1e1e]">
