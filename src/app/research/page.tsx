@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import NetworkHero from "@/components/NetworkHero";
+import ResearchCohortForm from "@/components/ResearchCohortForm";
 
 export const metadata: Metadata = {
   title: "Research Cohort — The 10% Movement",
-  description: "Join a selective community of researchers dedicated to underserved populations. Applications open June 11, 2026.",
+  description: "Join a selective community of researchers dedicated to underserved populations. Applications open now — closes July 1, 2026.",
 };
 
 export default function Research() {
@@ -91,35 +92,34 @@ export default function Research() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <AnimateIn animation="scale-reveal" className="border border-[#1e1e1e] p-12 bg-[#0a0a0a]">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 border border-[#2a2a2a] rounded-full bg-[#111] text-xs text-[#888]">
-                <span className="w-1.5 h-1.5 rounded-full bg-white opacity-60 animate-pulse" />
-                Opens June 11, 2026
-              </div>
-              <h2 className="text-2xl font-semibold mb-3">Apply to the Research Cohort</h2>
-              <AnimateIn animation="blur-reveal" delay={0.2}>
-                <p
-                  className="italic text-[#555] mb-8 max-w-xl"
-                  style={{ fontFamily: "var(--font-serif)" }}
-                >
-                  &ldquo;The first cohort will be small and selective. If your work belongs in this
-                  movement — we want to hear from you.&rdquo;
-                </p>
-              </AnimateIn>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <div className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium bg-[#1a1a1a] text-[#444] rounded-sm cursor-not-allowed border border-[#2a2a2a] w-fit">
-                  Apply to the Cohort (Opens June 11)
-                </div>
-                <Link href="/newsletter" className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium border border-[#2a2a2a] text-[#888] rounded-sm hover:text-white hover:bg-[#111] transition-colors w-fit">
-                  Submit to the Newsletter →
-                </Link>
-              </div>
+      {/* APPLICATION FORM */}
+      <section id="apply" className="py-24 px-6 border-b border-[#1e1e1e]">
+        <div className="max-w-4xl mx-auto">
+          <AnimateIn animation="reveal-left" className="mb-12">
+            <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 border border-[#2a2a2a] rounded-full bg-[#111] text-xs text-[#888]">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              Now Open — Closes July 1, 2026
             </div>
+            <h2 className="text-2xl font-semibold mb-3">Apply to the Research Cohort</h2>
+            <AnimateIn animation="blur-reveal" delay={0.2}>
+              <p
+                className="italic text-[#555] max-w-xl"
+                style={{ fontFamily: "var(--font-serif)" }}
+              >
+                &ldquo;The first cohort will be small and selective. If your work belongs in this
+                movement — we want to hear from you.&rdquo;
+              </p>
+            </AnimateIn>
           </AnimateIn>
+
+          <ResearchCohortForm />
+
+          <div className="mt-12 pt-8 border-t border-[#1e1e1e] flex items-center justify-between">
+            <p className="text-xs text-[#444]">Also accepting newsletter submissions</p>
+            <Link href="/newsletter#submit" className="text-sm text-[#888] hover:text-white transition-colors">
+              Submit to the Newsletter →
+            </Link>
+          </div>
         </div>
       </section>
     </div>

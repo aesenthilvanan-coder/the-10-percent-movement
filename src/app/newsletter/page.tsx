@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import WaveformHero from "@/components/WaveformHero";
+import NewsletterSubmissionForm from "@/components/NewsletterSubmissionForm";
 
 export const metadata: Metadata = {
   title: "The 10% Newsletter — The 10% Movement",
-  description: "A curated research digest featuring emerging evidence on underserved populations. Submissions open June 11, 2026.",
+  description: "A curated research digest featuring emerging evidence on underserved populations. Submissions open now — closes July 15, 2026.",
 };
 
 export default function Newsletter() {
@@ -109,32 +110,33 @@ export default function Newsletter() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <AnimateIn animation="scale-reveal" className="border border-[#1e1e1e] p-12 text-center bg-[#0a0a0a]">
+      {/* SUBMISSION FORM */}
+      <section id="submit" className="py-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <AnimateIn animation="reveal-left" className="mb-12">
             <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 border border-[#2a2a2a] rounded-full bg-[#111] text-xs text-[#888]">
-              <span className="w-1.5 h-1.5 rounded-full bg-white opacity-60 animate-pulse" />
-              Opens June 11, 2026
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              Now Open — Closes July 15, 2026
             </div>
             <h2 className="text-2xl font-semibold mb-3">Submit to The 10%</h2>
             <AnimateIn animation="blur-reveal" delay={0.2}>
               <p
-                className="italic text-[#666] max-w-md mx-auto mb-8"
+                className="italic text-[#555] max-w-md"
                 style={{ fontFamily: "var(--font-serif)" }}
               >
                 &ldquo;If you have work that belongs in The 10% — bring it. We&apos;ll be ready.&rdquo;
               </p>
             </AnimateIn>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <div className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium bg-[#1a1a1a] text-[#444] rounded-sm cursor-not-allowed border border-[#2a2a2a] w-fit mx-auto sm:mx-0">
-                Submit Your Work (Opens June 11)
-              </div>
-              <Link href="/research" className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium border border-[#2a2a2a] text-[#888] rounded-sm hover:text-white hover:bg-[#111] transition-colors w-fit mx-auto sm:mx-0">
-                Join the Research Cohort →
-              </Link>
-            </div>
           </AnimateIn>
+
+          <NewsletterSubmissionForm />
+
+          <div className="mt-12 pt-8 border-t border-[#1e1e1e] flex items-center justify-between">
+            <p className="text-xs text-[#444]">Also accepting research cohort applications</p>
+            <Link href="/research#apply" className="text-sm text-[#888] hover:text-white transition-colors">
+              Apply to the Cohort →
+            </Link>
+          </div>
         </div>
       </section>
     </div>

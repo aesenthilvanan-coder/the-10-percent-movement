@@ -2,6 +2,7 @@ import Link from "next/link";
 import HeroCounter from "@/components/HeroCounter";
 import AnimateIn from "@/components/AnimateIn";
 import CountUp from "@/components/CountUp";
+import ScrollPopup from "@/components/ScrollPopup";
 
 export default function Home() {
   return (
@@ -33,7 +34,7 @@ export default function Home() {
             "300 million rare disease patients globally",
             "Clinical trials underrepresent minority populations",
             "Clopidogrel efficacy varies dramatically by genotype",
-            "The 10% Movement · opening June 11, 2026",
+            "The 10% Movement · now open",
             "Pharmacogenomics is not a niche — it's a gap in standard care",
             "CYP2C19 poor metabolizers · 14% in Chinese populations",
             "East Asian intermediate metabolizers · 45%+",
@@ -41,7 +42,7 @@ export default function Home() {
             "300 million rare disease patients globally",
             "Clinical trials underrepresent minority populations",
             "Clopidogrel efficacy varies dramatically by genotype",
-            "The 10% Movement · opening June 11, 2026",
+            "The 10% Movement · now open",
             "Pharmacogenomics is not a niche — it's a gap in standard care",
           ].map((fact, i) => (
             <span key={i} className="flex-shrink-0 text-xs text-[#444] uppercase tracking-[0.18em] font-medium px-10 select-none">
@@ -223,18 +224,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── JUNE 11: Scale from bottom reveal ───────────────────── */}
+      {/* ── JOIN: Scale from bottom reveal ───────────────────── */}
       <section className="py-24 px-6 border-b border-[#1e1e1e] bg-[#0d0d0d]">
         <div className="max-w-6xl mx-auto">
           <AnimateIn animation="reveal-left" className="text-center mb-16">
             <p className="text-xs text-[#555] uppercase tracking-[0.2em] font-medium mb-4">
-              Opening June 11, 2026
+              Now Open
             </p>
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
               Two ways to join the movement
             </h2>
             <p className="text-sm text-[#888] mt-4 max-w-xl mx-auto leading-relaxed">
-              Both open simultaneously on June 11th. The cohort is highly selective.
+              Applications are open today. The cohort is highly selective.
               The newsletter is open to everyone.
             </p>
           </AnimateIn>
@@ -339,6 +340,7 @@ export default function Home() {
         </div>
       </section>
 
+      <ScrollPopup />
     </div>
   );
 }
